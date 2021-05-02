@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7b-dN-IjD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="45"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QPi-6l-Ceo">
+                                        <rect key="frame" x="30" y="0.5" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2RD-AX-U8j"/>
+                                    <constraint firstItem="QPi-6l-Ceo" firstAttribute="centerY" secondItem="v7b-dN-IjD" secondAttribute="centerY" constant="-5" id="B1T-ex-Vba"/>
+                                    <constraint firstItem="QPi-6l-Ceo" firstAttribute="centerX" secondItem="v7b-dN-IjD" secondAttribute="centerX" id="bSv-gl-3It"/>
+                                    <constraint firstItem="QPi-6l-Ceo" firstAttribute="leading" secondItem="v7b-dN-IjD" secondAttribute="leading" constant="30" id="qu7-OI-u07"/>
+                                </constraints>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="y0C-6P-CEz">
+                                <rect key="frame" x="0.0" y="89" width="414" height="4"/>
+                            </progressView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkd-Il-GaV">
+                                <rect key="frame" x="0.0" y="93" width="414" height="720"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CI6-Hm-zpb">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Back" id="9rb-s2-qak"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="XQm-CM-kw8"/>
+                                    <barButtonItem title="Foward" id="q6B-5d-lXh"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8nm-2w-WG0"/>
+                                    <barButtonItem title="Reload" id="qfJ-10-dGq"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CI6-Hm-zpb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1N0-cN-83L"/>
+                            <constraint firstItem="v7b-dN-IjD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2kT-Th-A7P"/>
+                            <constraint firstItem="Rkd-Il-GaV" firstAttribute="top" secondItem="y0C-6P-CEz" secondAttribute="bottom" id="IwV-bn-Zbh"/>
+                            <constraint firstItem="CI6-Hm-zpb" firstAttribute="top" secondItem="Rkd-Il-GaV" secondAttribute="bottom" id="P1X-SC-VBT"/>
+                            <constraint firstItem="Rkd-Il-GaV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RGf-H7-a1R"/>
+                            <constraint firstItem="Rkd-Il-GaV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S2J-Al-Sf7"/>
+                            <constraint firstItem="CI6-Hm-zpb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="S99-g6-5Fp"/>
+                            <constraint firstItem="CI6-Hm-zpb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YBo-fm-wPc"/>
+                            <constraint firstItem="y0C-6P-CEz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dAW-WX-3CD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y0C-6P-CEz" secondAttribute="trailing" id="ifq-UH-ZOw"/>
+                            <constraint firstItem="v7b-dN-IjD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="p5j-UU-AQa"/>
+                            <constraint firstItem="v7b-dN-IjD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vvs-M7-mER"/>
+                            <constraint firstItem="y0C-6P-CEz" firstAttribute="top" secondItem="v7b-dN-IjD" secondAttribute="bottom" id="xmz-jm-fxI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainWebView" destination="Rkd-Il-GaV" id="wzS-s2-mwC"/>
+                        <outlet property="progressBar" destination="y0C-6P-CEz" id="9Lv-ez-Y5k"/>
+                        <outlet property="urlField" destination="QPi-6l-Ceo" id="BXz-32-SEG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
