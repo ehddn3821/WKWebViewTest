@@ -85,6 +85,13 @@ extension ViewController: UITextFieldDelegate {
 // MARK: - WKNavigationDelegate
 extension ViewController: WKNavigationDelegate {
     
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         urlField.text = webView.url?.absoluteString
