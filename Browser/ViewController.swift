@@ -37,13 +37,25 @@ class ViewController: UIViewController {
 //MARK: - UITextFieldDelegate
 extension ViewController: UITextFieldDelegate {
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        urlField.resignFirstResponder()
+        if let str = textField.text {
+            urlStr = "https://" + str
+            mainWebView.loadUrlString(urlString: urlStr)
+        }
+        
+        return false
+    }
 }
 
 
 // MARK: - WKNavigationDelegate
 extension ViewController: WKNavigationDelegate {
     
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+        urlField.text = webView.url?.absoluteString
+    }
 }
 
 
